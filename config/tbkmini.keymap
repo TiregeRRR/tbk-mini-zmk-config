@@ -24,7 +24,7 @@
             bindings = <
 &kp ESCAPE          &kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y      &kp U          &kp I       &kp O    &kp P     &kp MINUS
 &mt LEFT_SHIFT TAB  &kp A  &kp S  &kp D  &kp F     &kp G        &kp H      &kp J          &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LCTRL           &kp Z  &kp X  &kp C  &kp V     &kp B        &kp N      &kp M          &kp COMMA   &kp DOT  &kp FSLH  &kp BSLH
+&kp LCTRL           &kp Z  &kp X  &kp C  &kp V     &kp B        &kp N      &kp M          &kp COMMA   &kp DOT  &kp FSLH  &mt LEFT_ALT BACKSLASH
                                   &mo 1  &kp LGUI  &kp ENTER    &kp SPACE  &kp BACKSPACE  &kp DELETE
             >;
         };
@@ -40,10 +40,10 @@
 
         sym_layer {
             bindings = <
-&kp ESC    &kp KP_MULTIPLY  &kp MINUS  &kp LBRC     &kp RBRC  &kp DOLLAR    &kp EXCL  &kp AT    &kp HASH  &kp PRCNT  &kp BSPC  &trans
-&kp LSHFT  &kp PIPE         &kp EQUAL  &kp LPAR     &kp RPAR  &kp GT        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RGUI  &trans
-&kp LCTRL  &kp CARET        &kp UNDER  &kp LBKT     &kp RBKT  &kp AMPS      &trans    &trans    &trans    &trans     &trans    &trans
-                                       &kp LG(RET)  &kp LALT  &kp LGUI      &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans    &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans    &trans        &trans     &trans
+                        &trans  &trans  &trans    &trans  &trans          &trans
             >;
         };
     };
