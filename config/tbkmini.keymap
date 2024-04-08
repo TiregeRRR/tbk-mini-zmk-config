@@ -76,9 +76,9 @@
   
         ru_layer {
                     bindings = <
-        &trans  &kp ru_y  &kp ru_ts  &kp ru_u  &kp ru_ye &kp ru_n       &kp ru_g  &kp ru_sh    &kp ru_shch &kp ru_z  &kp ru_kh  &kp ru_hard
-        &trans  &kp ru_f  &kp ru_bi  &kp ru_v  &kp ru_a  &kp ru_p       &kp ru_r  &kp ru_o     &kp ru_l    &kp ru_d  &kp ru_zh  &kp ru_e
-        &trans  &kp ru_ya &kp ru_ch  &kp ru_s  &kp ru_m  &kp ru_i       &kp ru t  &kp ru_soft  &kp ru_b   &kp ru_yu  &kp DOT    &trans
+        &trans  &ru_y  &ru_ts  &ru_u  &ru_ye &ru_n       &ru_g  &ru_sh    &ru_shch &ru_z  &ru_kh  &ru_hard
+        &trans  &ru_f  &ru_bi  &ru_v  &ru_a  &ru_p       &ru_r  &ru_o     &ru_l    &ru_d  &ru_zh  &ru_e
+        &trans  &ru_ya &ru_ch  &ru_s  &ru_m  &ru_i       &ru t  &ru_soft  &ru_b    &ru_yu &DOT    &trans
                                          &trans   &trans   &trans    &trans  &trans          &trans
             >;
         };
