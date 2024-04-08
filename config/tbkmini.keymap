@@ -56,7 +56,7 @@
 
         num_layer {
             bindings = <
-&trans  &kp EQUAL  &kp PLUS   &kp MINUS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER  &kp LPAR  &kp RPAR  &trans
+&trans  &kp EQUAL  &kpaaaw  PLUS   &kp MINUS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1     &kp N2     &kp N3     &kp N4          &kp N5             &kp N6            &kp N7             &kp N8     &kp N9    &kp N0    &kp COLON
 &trans  &kp TILDE  &kp GRAVE  &trans     &trans          &trans             &trans            &godecl            &gonoteq   &trans    &trans    &trans
                               &trans     &trans          &trans             &trans            &trans             &trans
@@ -65,10 +65,19 @@
 
         navlayer {
             bindings = <
-&trans  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
+&trans  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &tog 3  &trans          &trans    &trans        &trans     &trans
 &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
 &trans  &trans  &trans          &trans          &mkp RCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
                                 &trans          &trans           &trans    &trans  &trans          &trans
+            >;
+        };
+  
+        ru_layer {
+                    bindings = <
+        &trans  &kp ru_y  &kp ru_ts  &kp ru_u  &kp ru_ye &kp ru_n       &kp ru_g  &kp ru_sh    &kp ru_shch &kp ru_z  &kp ru_kh  &kp ru_hard
+        &trans  &kp ru_f  &kp ru_bi  &kp ru_v  &kp ru_a  &kp ru_p       &kp ru_r  &kp ru_o     &kp ru_l    &kp ru_d  &kp ru_zh  &kp ru_e
+        &trans  &kp ru_ya &kp ru_ch  &kp ru_s  &kp ru_m  &kp ru_i       &kp ru t  &kp ru_soft  &kp ru_b   &kp ru_yu  &kp DOT    &trans
+                                         &trans   &trans   &trans    &trans  &trans          &trans
             >;
         };
     };
