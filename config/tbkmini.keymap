@@ -57,9 +57,9 @@
 
         navlayer {
             bindings = <
-&bt BT_CLR  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
-&bt BT_NXT  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&bt BT_PRV  &trans  &trans          &trans          &mkp RCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
+&trans  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &trans  &trans          &trans    &trans        &trans     &bt BT_CLR
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &bt BT_NXT
+&trans  &trans  &trans          &trans          &mkp RCLK        &trans    &trans  &trans          &trans    &trans        &trans     &bt BT_PRV
                                 &trans          &trans           &trans    &trans  &trans          &trans
             >;
         };
