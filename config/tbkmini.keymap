@@ -8,25 +8,6 @@
 #define NUM 1
 #define SYM 2
 
-/* Global defaults */
-
-#define QUICK_TAP_MS 175
-
-&sk {
-  release-after-ms = <900>;
-  quick-release;
-};
-
-&sl { // Allow sticky mods to chord across sticky layers.
-  ignore-modifiers;
-};
-
-&lt {
-  flavor = "balanced";
-  tapping-term-ms = <200>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-};
-
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
@@ -34,7 +15,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -70,6 +51,34 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             bindings = <&kp EXCL &kp EQUAL>;
             label = "GONOTEQ";
         };
+
+        vim_left_window: vim_left_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp LEFT_ARROW>, <&macro_release &kp LCTRL>;
+            label = "VIM_LEFT_WINDOW";
+        };
+
+        vim_right_window: vim_right_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp RIGHT_ARROW>, <&macro_release &kp LCTRL>;
+            label = "VIM_RIGHT_WINDOW";
+        };
+
+        vim_top_window: vim_top_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp UP_ARROW>, <&macro_release &kp LCTRL>;
+            label = "VIM_TOP_WINDOW";
+        };
+
+        vim_bottom_window: vim_bottom_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp DOWN_ARROW>, <&macro_release &kp LCTRL>;
+            label = "VIM_RIGHT_WINDOW";
+        };
     };
 
     keymap {
@@ -88,17 +97,17 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             bindings = <
 &trans  &kp EQUAL  &kp PLUS   &kp MINUS  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1     &kp N2     &kp N3     &kp N4          &kp N5             &kp N6            &kp N7             &kp N8     &kp N9    &kp N0    &trans
-&trans  &kp TILDE  &kp GRAVE  &kp COLON     &kp SQT         &trans          &trans            &godecl            &gonoteq   &trans    &kp BACKSLASH    &trans
+&trans  &kp TILDE  &kp GRAVE  &kp COLON     &kp SQT      &trans             &trans            &godecl            &gonoteq   &kp TAB    &kp BACKSLASH    &trans
                               &trans     &trans          &trans             &trans            &trans             &trans
             >;
         };
 
         navlayer {
             bindings = <
-&trans  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans  &trans          &trans          &mkp RCLK        &trans    &trans  &trans          &trans    &trans        &trans     &trans
-                                &trans          &trans           &trans    &trans  &trans          &trans
+&trans  &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &trans    &trans  &vim_left_window &vim_bottom_window  &vim_top_window  &vim_right_window     &trans
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &kp LEFT_ARROW   &kp DOWN            &kp UP_ARROW     &kp RIGHT  &trans
+&trans  &trans  &trans          &trans          &mkp RCLK        &trans    &trans  &trans           &trans              &trans           &trans     &trans
+                                &trans          &trans           &trans    &trans  &trans           &trans
             >;
         };
     };
