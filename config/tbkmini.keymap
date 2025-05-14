@@ -2,6 +2,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include "../42.h"
+#include "../include/zmk-helpers/helper.h"
 
 #define DEFAULT 0
 #define NUM 1
