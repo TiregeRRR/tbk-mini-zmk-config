@@ -130,7 +130,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W>, <&macro_release &kp LCTRL>, <&macro_tap &kp DOWN_ARROW>;
-            label = "VIM_RIGHT_WINDOW";
+            label = "VIM_BOTTOM_WINDOW";
         };
     };
 
