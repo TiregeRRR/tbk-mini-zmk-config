@@ -68,7 +68,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
+               require-prior-idle-ms = <75>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -108,28 +108,28 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         vim_left_window: vim_left_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp LEFT_ARROW>, <&macro_release &kp LCTRL>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W>, <&macro_release &kp LCTRL>, <&macro_tap &kp LEFT_ARROW>;
             label = "VIM_LEFT_WINDOW";
         };
 
         vim_right_window: vim_right_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp RIGHT_ARROW>, <&macro_release &kp LCTRL>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W>, <&macro_release &kp LCTRL>, <&macro_tap &kp RIGHT_ARROW>;
             label = "VIM_RIGHT_WINDOW";
         };
 
         vim_top_window: vim_top_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp UP_ARROW>, <&macro_release &kp LCTRL>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W>, <&macro_release &kp LCTRL>, <&macro_tap &kp UP_ARROW>;
             label = "VIM_TOP_WINDOW";
         };
 
         vim_bottom_window: vim_bottom_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W &kp DOWN_ARROW>, <&macro_release &kp LCTRL>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp W>, <&macro_release &kp LCTRL>, <&macro_tap &kp DOWN_ARROW>;
             label = "VIM_RIGHT_WINDOW";
         };
     };
